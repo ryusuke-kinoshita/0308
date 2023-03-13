@@ -14,7 +14,6 @@ export default function about() {
   const iconSize1 = "20";
   const iconSize2 = "50";
 
-  const 
   return (
     <>
       <Meta pageTitle="アバウト" />
