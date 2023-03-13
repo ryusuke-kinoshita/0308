@@ -1,15 +1,19 @@
 import React from "react";
+import Header from "../conponents/Header";
 import Hero from "../conponents/Hero";
 
 export default function Contact() {
+  const heading = "Contact";
+
   return (
     <>
+      <Header heading={heading} />
       <div>
         <div>
-          <Hero heading="contact" message="お問い合わせ" image="image3" />
+          <Hero heading={heading} message="お問い合わせ" image="image3" />
         </div>
       </div>
-      <div class="flex justify-center items-center min-h-screen bg-gray-200">
+      <div className="flex justify-center items-center min-h-screen bg-gray-200">
         <form
           action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfJ4L_bL9pFAYeSThmaEVU2IOBztmUDiUaN-565YTEGFI-QFg/formResponse"
           className="w-full max-w-lg bg-gray-100 p-6 rounded-md"

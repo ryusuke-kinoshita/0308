@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Header from "../conponents/Header";
 import Hero from "../conponents/Hero";
 import { siteMeta } from "../lib/constants";
 const { siteTitle } = siteMeta;
@@ -6,10 +6,8 @@ const { siteTitle } = siteMeta;
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>My portfolio</title>
-      </Head>
-      <Hero heading={siteMeta} message="Welcome" image="image1" />
+      <Header />
+      <Hero heading={siteTitle} message="Welcome" image="image1" />
     </>
   );
 }

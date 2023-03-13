@@ -7,22 +7,29 @@ const Navbar = () => {
 
   const [color, setColor] = useState("transparent");
   const [textColor, setTextColor] = useState("white");
+  const [position, setPosition] = useState("");
 
   const handleNav = () => {
     setNav(!nav);
   };
 
+  const handleScrollChangeColor = () => {
+    if (window.scrollY >= 90) {
+      setColor("#fff");
+      setTextColor("#000");
+      setPosition("sticky");
+    } else {
+      setColor("transparent");
+      setTextColor("#fff");
+      setPosition("sticky");
+    }
+  };
+
   useEffect(() => {
-    const changeColor = () => {
-      if (window.scrollY >= 90) {
-        setColor("#fff");
-        setTextColor("#000");
-      } else {
-        setColor("transparent");
-        setTextColor("#fff");
-      }
+    window.addEventListener("scroll", handleScrollChangeColor);
+    return () => {
+      window.removeEventListener("scroll", handleScrollChangeColor);
     };
-    window.addEventListener("scroll", changeColor);
   }, []);
 
   return (
@@ -36,15 +43,18 @@ const Navbar = () => {
             Portfolio
           </h1>
         </Link>
-        <ul className="hidden sm:flex ">
+        <ul
+          className="hidden sm:flex"
+          style={{ position: `${position}`, color: `${textColor}` }}
+        >
           <li className="p-4 hover:text-gray-500">
             <Link href="/">Home</Link>
           </li>
           <li className="p-4 hover:text-gray-500">
-            <Link href="/about">about</Link>
+            <Link href="/about">About</Link>
           </li>
           <li className="p-4 hover:text-gray-500">
-            <Link href="/contact">contact</Link>
+            <Link href="/contact">Contact</Link>
           </li>
         </ul>
 
@@ -76,13 +86,13 @@ const Navbar = () => {
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/about">about</Link>
+              <Link href="/about">About</Link>
             </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/contact">contact</Link>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>
