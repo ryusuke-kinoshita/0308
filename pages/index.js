@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Hero from "../conponents/Hero";
+import { siteMeta } from "../lib/constants";
+const { siteTitle } = siteMeta;
 
 export default function Home() {
   return (
@@ -7,7 +9,7 @@ export default function Home() {
       <Head>
         <title>My portfolio</title>
       </Head>
-      <Hero heading="Ryusuke's portfolio" message="Welcome" image="image1" />
+      <Hero heading={siteMeta} message="Welcome" image="image1" />
     </>
   );
 }

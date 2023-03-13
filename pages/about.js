@@ -2,7 +2,6 @@ import React from "react";
 import Head from "next/head";
 
 import Hero from "../conponents/Hero";
-import Meta from "../conponents/Meta";
 
 import { DiHtml5, DiCss3, DiJavascript1 } from "react-icons/di";
 import { FaPhp, FaPython, FaReact, FaMapPin } from "react-icons/fa";
@@ -16,7 +15,6 @@ export default function about() {
 
   return (
     <>
-      <Meta pageTitle="アバウト" />
       <div>
         <div>
           <Hero heading="About" message="自己紹介" image="image2" />
