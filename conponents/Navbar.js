@@ -7,7 +7,7 @@ const Navbar = () => {
 
   const [color, setColor] = useState("transparent");
   const [textColor, setTextColor] = useState("white");
-  const [position, setPosition] = useState("");
+  const [position, setPosition] = useState("relative");
 
   const handleNav = () => {
     setNav(!nav);
@@ -21,7 +21,7 @@ const Navbar = () => {
     } else {
       setColor("transparent");
       setTextColor("#fff");
-      setPosition("sticky");
+      setPosition("relative");
     }
   };
 

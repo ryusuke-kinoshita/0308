@@ -1,16 +1,17 @@
 import React from "react";
 import Header from "../conponents/Header";
 import Hero from "../conponents/Hero";
+import { siteMeta } from "../lib/constants";
 
 export default function Contact() {
-  const heading = "Contact";
+  const { heading, message, image } = siteMeta.contact;
 
   return (
     <>
       <Header heading={heading} />
       <div>
         <div>
-          <Hero heading={heading} message="お問い合わせ" image="image3" />
+          <Hero heading={heading} message={message} image={image} />
         </div>
       </div>
       <div className="flex justify-center items-center min-h-screen bg-gray-200">

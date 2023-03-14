@@ -1,5 +1,6 @@
 import Header from "../conponents/Header";
 import Hero from "../conponents/Hero";
+import { siteMeta } from "../lib/constants";
 
 import { DiHtml5, DiCss3, DiJavascript1 } from "react-icons/di";
 import { FaPhp, FaPython, FaReact, FaMapPin } from "react-icons/fa";
@@ -8,15 +9,15 @@ import { TbCandle } from "react-icons/tb";
 import { ImMan } from "react-icons/im";
 
 export default function About() {
+  const { heading, message, image } = siteMeta.about;
   const iconSize1 = "20";
   const iconSize2 = "50";
-  const heading = "About Myself";
 
   return (
     <>
       <Header heading={heading} />
       <div>
-        <Hero heading={heading} message="自己紹介" image="image2" />
+        <Hero heading={heading} message={message} image={image} />
       </div>
       <div className="flex justify-center items-center min-h-screen bg-gray-200">
         <article className="w-full md:w-2/3 lg:w-1/2 px-4">
