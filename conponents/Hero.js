@@ -1,5 +1,3 @@
-import { siteMeta } from "../lib/constants";
-
 export default function Hero({ heading, message, image }) {
   return (
     <div
